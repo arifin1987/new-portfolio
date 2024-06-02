@@ -36,24 +36,24 @@ const Contact = () => {
         </Flip>
 
         <h3 className="text-xl">
-          <div className="flex gap-2 items-center ">
-            <FaPhoneAlt className="text-emerald-500"></FaPhoneAlt> Phone:
-            +8801911415195
+          <div className="flex gap-2 items-center my-2">
+            <FaPhoneAlt className="text-emerald-500"></FaPhoneAlt>
+            <p>Phone: +8801911415195</p>
           </div>
         </h3>
         <h3 className="text-xl">
-          <div className="flex gap-2 items-center">
-            <BiMailSend className="text-emerald-500"></BiMailSend>Email:
-            shohidularifin@gmail.com
+          <div className="flex gap-2 items-center my-2">
+            <BiMailSend className="text-emerald-500"></BiMailSend>
+            <p>Email: shohidularifin@gmail.com</p>
           </div>
         </h3>
         <h3 className="text-xl">
-          <div className="flex gap-2 items-center">
-            <FaLocationArrow className="text-emerald-500 "></FaLocationArrow>{" "}
-            Address: Avay Das Lane, Tikatuli, Dhaka,Bangladesh
+          <div className="flex gap-2 items-center my-2">
+            <FaLocationArrow className="text-emerald-500 "></FaLocationArrow>
+            <p>Address: Avay Das Lane, Tikatuli, Dhaka,Bangladesh</p>
           </div>
         </h3>
-        <h2 className="text-3xl bold mb-2">Message Me</h2>
+        <h2 className="text-3xl bold mb-2 text-emerald-500">Message Me</h2>
         <form ref={form} onSubmit={sendEmail}>
           <div>
             <input
