@@ -42,8 +42,8 @@ const Banner = () => {
             </div>
             <h3 className="py-6  text-xl text-emerald-500 w-[70%]">
               I have vast experience in TypeScript, NodeJS, ExpressJS, ReactJS,
-              Next.js Redux Tool Kit, MongoDB, Firebase, Bootstrap, Tailwind
-              css, Ant Design, Framer Motion etc.
+              Next.js, Redux Tool Kit, MongoDB, Firebase, Bootstrap, Tailwind
+              css, Ant Design, Framer Motion, shadcn etc.
             </h3>
             <button className="btn btn-primary">
               {" "}
