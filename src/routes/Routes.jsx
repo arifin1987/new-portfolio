@@ -8,7 +8,7 @@ import Projects from "../pages/Projects/Projects";
 import Contact from "../pages/Contact/Contact";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Dashboard from "../pages/Dashboard/Dashboard";
-import DashboardAllProjects from "../pages/Dashboard/DashboardAllProjects/DashboardAllProjects";
+import ProjectDetails from "../pages/Projects/ProjectDetails";
 
 export const router = createBrowserRouter([
   {
@@ -28,8 +28,14 @@ export const router = createBrowserRouter([
         element: <Skills />,
       },
       {
-        path: "projects",
+        path: "all-projects",
         element: <Projects />,
+      },
+      {
+        path: "all-projects/:id",
+        element: <ProjectDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/all-projects/${params.id}`),
       },
       {
         path: "contact",
@@ -44,10 +50,6 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />,
-      },
-      {
-        path: "all-projects",
-        element: <DashboardAllProjects />,
       },
     ],
   },
