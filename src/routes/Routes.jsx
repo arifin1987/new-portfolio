@@ -9,6 +9,7 @@ import Contact from "../pages/Contact/Contact";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import ProjectDetails from "../pages/Projects/ProjectDetails";
+import DashboardAllProjects from "../pages/Dashboard/DashboardAllProjects/DashboardAllProjects";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />,
+      },
+      {
+        path: "all-projects",
+        element: <DashboardAllProjects />,
       },
     ],
   },

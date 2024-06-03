@@ -1,7 +1,61 @@
+import { Link } from "react-router-dom";
+import { useGetProjectsQuery } from "../../../redux/api";
+
 const DashboardAllProjects = () => {
+  const { data, isLoading } = useGetProjectsQuery(undefined);
+  console.log(data);
+
+  if (isLoading) {
+    return <p>loading.....</p>;
+  }
   return (
     <div>
-      <h1>All Projects</h1>
+      <div>
+        <h2>Total Projects:{data.length}</h2>
+
+        <div className="overflow-x-auto w-full">
+          <table className="table w-full bg-sky-300">
+            <thead>
+              <tr>
+                <th>Live Site</th>
+                <th>Project Name</th>
+                <th>Used Technologies</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((project) => (
+                <tr key={project._id}>
+                  <td>
+                    <img
+                      className="w-[100px]"
+                      src={project.projectImage}
+                      alt=""
+                    />{" "}
+                  </td>
+                  <td>{project.projectName}</td>
+                  <td>{project.usedTechnologies}</td>
+
+                  <td>
+                    <Link to={`/dashboard/update/${project._id}`}>
+                      <button>Edit </button>
+                    </Link>
+                  </td>
+                  <td>
+                    <button>Delete</button>
+                  </td>
+                  <td>
+                    <Link>
+                      <button>Add </button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
