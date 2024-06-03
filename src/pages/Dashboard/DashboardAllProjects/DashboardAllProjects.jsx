@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
-import { useGetProjectsQuery } from "../../../redux/api";
+import {
+  useDeleteProjectsMutation,
+  useGetProjectsQuery,
+} from "../../../redux/api";
 
 const DashboardAllProjects = () => {
-  const { data, isLoading } = useGetProjectsQuery(undefined);
+  const { data, isLoading } = useGetProjectsQuery();
+  const [deleteProject] = useDeleteProjectsMutation();
   console.log(data);
 
   if (isLoading) {
@@ -38,15 +42,17 @@ const DashboardAllProjects = () => {
                   <td>{project.usedTechnologies}</td>
 
                   <td>
-                    <Link to={`/dashboard/update/${project._id}`}>
+                    <Link to={`/dashboard/update-projects/${project._id}`}>
                       <button>Edit </button>
                     </Link>
                   </td>
                   <td>
-                    <button>Delete</button>
+                    <button onClick={() => deleteProject(project._id)}>
+                      Delete
+                    </button>
                   </td>
                   <td>
-                    <Link>
+                    <Link to="/dashboard/create-projects">
                       <button>Add </button>
                     </Link>
                   </td>
